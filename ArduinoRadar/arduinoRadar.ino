@@ -14,6 +14,12 @@ int rotationStep = 1;
 // NewPing setup of pins and maximum distance.
 NewPing sonar(TRIGGER_PIN, ECHO_PIN, MAX_DISTANCE);
 
+void print(int rot, int dist) {
+  Serial.print(rot);
+  Serial.print(",");
+  Serial.println(dist);
+}
+
 void setup() {
   Serial.begin(9600);
   myservo.attach(9);
@@ -21,8 +27,6 @@ void setup() {
 }
 
 void loop() {
-  delay(50);
-  
   // get distance
   dist = sonar.ping_cm();
   
@@ -34,13 +38,9 @@ void loop() {
     rotationStep *= -1;
   }
   
-  
-  // print debug info
-  Serial.print("Angle: ");
-  Serial.print(servoRotation);
-  Serial.print("\t Dist: ");
-  Serial.print(dist);
-  Serial.println("cm");
+  // print info
+  print(servoRotation, dist);
   
   servoRotation += rotationStep;
+  delay(100);
 }
