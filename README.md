@@ -1,5 +1,5 @@
 # Arduino radar
-Arduino radar using HC-SR04 ultrasonic sensor and a servomotor
+Arduino radar using HC-SR04 ultrasonic sensor and a servomotor 
 
 ![Screenshot](https://cloud.githubusercontent.com/assets/12819691/10774088/7bba5796-7cff-11e5-99f5-6969e53a984e.png)
 
